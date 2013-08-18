@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{D9FFDE74-33B0-43F2-BAAA-6186DC469250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructuresUnitTests", "DataStructuresUnitTests\DataStructuresUnitTests.csproj", "{C72D17F8-EA55-4F45-81B1-F46E3993F986}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://appsforme.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DataStructures\\DataStructures.csproj
+		SccProjectName1 = DataStructures
+		SccLocalPath1 = DataStructures
+		SccProjectUniqueName2 = DataStructuresUnitTests\\DataStructuresUnitTests.csproj
+		SccProjectName2 = DataStructuresUnitTests
+		SccLocalPath2 = DataStructuresUnitTests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Release|x64.ActiveCfg = Release|Any CPU
+		{D9FFDE74-33B0-43F2-BAAA-6186DC469250}.Release|x86.ActiveCfg = Release|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Release|x64.ActiveCfg = Release|Any CPU
+		{C72D17F8-EA55-4F45-81B1-F46E3993F986}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
