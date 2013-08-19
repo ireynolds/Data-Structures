@@ -57,6 +57,7 @@
     <Compile Include="HashDictionaryTest.cs" />
     <Compile Include="LLDictionaryTest.cs" />
     <Compile Include="LinkedListTest.cs" />
+    <Compile Include="PerformanceTests\SplayTreePerfTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

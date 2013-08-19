@@ -49,6 +49,7 @@
     <Compile Include="LinkedList\ILinkedList.cs" />
     <Compile Include="LinkedList\LinkedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Set\SplayTree.cs" />
     <Compile Include="Stack\IStack.cs" />
     <Compile Include="Stack\Stack.cs" />
   </ItemGroup>
