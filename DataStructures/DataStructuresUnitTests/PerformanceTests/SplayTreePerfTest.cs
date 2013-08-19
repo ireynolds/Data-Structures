@@ -21,12 +21,12 @@ namespace DataStructuresUnitTests.PerformanceTests
 				    throw new Exception();
 			
 			    for (int m1 = 0; m1 < n; m1++) 
-				    t.insert(m1);
+				    t.Insert(m1);
 			
 			    lookupRand(t, n, m);
 			    lookupRand(t, n, m);
 			
-			    T = t.numRotations;
+			    T = t.NumRotations;
 			    double tm = (double)T / m ;				// T / m
 			    double ln = Math.Log(n) / Math.Log(2);	// log_2(n)
 			    Console.WriteLine(i + ": ");
@@ -39,7 +39,7 @@ namespace DataStructuresUnitTests.PerformanceTests
             Random r = new Random();
             for (int i = 0; i < numOps; i++)
             {
-                t.lookup(r.Next(max));
+                t.Lookup(r.Next(max));
             }
         }
     }

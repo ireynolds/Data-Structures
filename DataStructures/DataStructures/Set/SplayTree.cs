@@ -25,7 +25,7 @@ namespace DataStructures.Set
 	     * Number of single rotations performed on this tree. Public for testing
 	     * purposes.
 	     */
-	    public long numRotations;
+	    public long NumRotations;
 
 	    public SplayTree() 
             : this(null) { }
@@ -44,7 +44,7 @@ namespace DataStructures.Set
 	    // Returns a reference to the new root in this tree (what replaced node).
 	    // After this operation, you MUST reassign the parents' subtree to the
 	    // return value.
-	    private Node rotate(Node node, Direction direction) {
+	    private Node Rotate(Node node, Direction direction) {
 		    Node n = null;
 		    switch (direction) {
 		    case Direction.Right:
@@ -58,7 +58,7 @@ namespace DataStructures.Set
 			    n.left = node;
 			    break;
 		    }
-		    numRotations++;
+		    NumRotations++;
 		    return n;
 	    }
 
@@ -69,8 +69,8 @@ namespace DataStructures.Set
 	     * @param key
 	     * @return the new root of this
 	     */
-	    private void splay(int key) {
-		    Tuple ret = splay(key, overallRoot);
+	    private void Splay(int key) {
+		    Tuple ret = Splay(key, overallRoot);
 		    overallRoot = ret.rootNode;
 
 		    // If the key was left one down from the root, move it up.
@@ -78,14 +78,14 @@ namespace DataStructures.Set
 		    if (r == null)
 			    return;
 		    if (r.left != null && r.left.key == ret.splayedKey) {
-			    overallRoot = rotate(overallRoot, Direction.Right);
+			    overallRoot = Rotate(overallRoot, Direction.Right);
 		    } else if (r.right != null && r.right.key == ret.splayedKey) {
-			    overallRoot = rotate(overallRoot, Direction.Left);
+			    overallRoot = Rotate(overallRoot, Direction.Left);
 		    }
 	    }
 
 	    // Private recursive companion to splay(int)
-	    private Tuple splay(int key, Node current) {
+	    private Tuple Splay(int key, Node current) {
 		    // If you couldn't find key in the tree, return null
 		    if (current == null)
 			    return new Tuple(null, 0);
@@ -96,11 +96,11 @@ namespace DataStructures.Set
 			    return new Tuple(current, current.key);
 
 		    } else if (key < current.key) {
-			    ret = splay(key, current.left);
+			    ret = Splay(key, current.left);
 			    current.left = ret.rootNode;
 
 		    } else { // key > current.key
-			    ret = splay(key, current.right);
+			    ret = Splay(key, current.right);
 			    current.right = ret.rootNode;
 
 		    }
@@ -123,22 +123,22 @@ namespace DataStructures.Set
 		    if (ll != null && ll.key == ret.splayedKey) {
 			    // first rotate around current, then rotate around whatever took
 			    // current's place (rotate grandparent of splayedKey, then parent).
-			    newCurrent = rotate(current, Direction.Right);
-			    newCurrent = rotate(newCurrent, Direction.Right);
+			    newCurrent = Rotate(current, Direction.Right);
+			    newCurrent = Rotate(newCurrent, Direction.Right);
 
 		    } else if (lr != null && lr.key == ret.splayedKey) {
 			    // first rotate around current's left child, then rotate around
 			    // current.
-			    current.left = rotate(current.left, Direction.Left);
-			    newCurrent = rotate(current, Direction.Right);
+			    current.left = Rotate(current.left, Direction.Left);
+			    newCurrent = Rotate(current, Direction.Right);
 
 		    } else if (rr != null && rr.key == ret.splayedKey) {
-			    newCurrent = rotate(current, Direction.Left);
-			    newCurrent = rotate(newCurrent, Direction.Left);
+			    newCurrent = Rotate(current, Direction.Left);
+			    newCurrent = Rotate(newCurrent, Direction.Left);
 
 		    } else if (rl != null && rl.key == ret.splayedKey) {
-			    current.right = rotate(current.right, Direction.Right);
-			    newCurrent = rotate(current, Direction.Left);
+			    current.right = Rotate(current.right, Direction.Right);
+			    newCurrent = Rotate(current, Direction.Left);
 
 		    } else { // the splayedNode is at depth one
 			    newCurrent = current;
@@ -152,8 +152,8 @@ namespace DataStructures.Set
 	     * 
 	     */
 	    // Splay the tree around key and then check if key is at the root.
-	    public bool lookup(int key) {
-		    splay(key);
+	    public bool Lookup(int key) {
+		    Splay(key);
 		    return overallRoot != null && overallRoot.key == key;
 	    }
 
@@ -162,8 +162,8 @@ namespace DataStructures.Set
 	     * 
 	     */
 	    // Splay the tree around key and then place key at the root.
-	    public void insert(int key) {
-		    splay(key);
+	    public void Insert(int key) {
+		    Splay(key);
 		    Node newRoot = new Node(key);
 		    if (overallRoot == null) {
 			    overallRoot = newRoot;
@@ -193,9 +193,9 @@ namespace DataStructures.Set
 	     */
 	    // Get n2, the root of t2. Splay t1 around n2 so that the root of t1 has
 	    // only a left subtree.
-	    private SplayTree concat(SplayTree t1, SplayTree t2) {
+	    private SplayTree Concat(SplayTree t1, SplayTree t2) {
 		    if (t2.overallRoot != null && t1.overallRoot != null) {
-			    t1.splay(t2.overallRoot.key);
+			    t1.Splay(t2.overallRoot.key);
 			    t1.overallRoot.right = t2.overallRoot;
 			    return t1;
 		    } else if (t2.overallRoot != null) {
@@ -213,12 +213,12 @@ namespace DataStructures.Set
 	     */
 	    // Splay the tree around K, then remove root and concatenate its two
 	    // subtrees.
-	    public void delete(int key) {
-		    splay(key);
+	    public void Delete(int key) {
+		    Splay(key);
 		    if (overallRoot != null && overallRoot.key == key) {
 			    SplayTree t1 = new SplayTree(overallRoot.left);
 			    SplayTree t2 = new SplayTree(overallRoot.right);
-			    overallRoot = concat(t1, t2).overallRoot;
+			    overallRoot = Concat(t1, t2).overallRoot;
 		    }
 	    }
 
@@ -227,14 +227,14 @@ namespace DataStructures.Set
 	     * string.
 	     * 
 	     */
-	    public String display() {
+	    public String Display() {
 		    StringBuilder sb = new StringBuilder();
-		    display(overallRoot, 0, sb);
+		    Display(overallRoot, 0, sb);
 		    return sb.ToString();
 	    }
 
 	    // Private companion to display()
-	    private void display(Node current, int level, StringBuilder sb) {
+	    private void Display(Node current, int level, StringBuilder sb) {
 		    String output = "";
 		    for (int i = 0; i < level; i++)
 			    output += "  ";
@@ -243,8 +243,8 @@ namespace DataStructures.Set
 		    sb.Append(output);
 
 		    if (current != null && (current.left != null || current.right != null)) {
-			    display(current.left, level + 1, sb);
-			    display(current.right, level + 1, sb);
+			    Display(current.left, level + 1, sb);
+			    Display(current.right, level + 1, sb);
 		    }
 	    }
 	    private class Node {
