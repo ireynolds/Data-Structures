@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="GraphTest.cs" />
     <Compile Include="HashDictionaryTest.cs" />
     <Compile Include="LLDictionaryTest.cs" />
     <Compile Include="LinkedListTest.cs" />
