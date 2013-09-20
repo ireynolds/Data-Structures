@@ -17,30 +17,32 @@ namespace DataStructures.Stack
 
         public T Top
         {
-            get 
+            get
             {
-                return _elements.First;
+                return _elements.Last;
             }
         }
 
         public int Count
         {
-            get { throw new NotImplementedException(); }
+            get { return _elements.Count; }
         }
 
         public T Pop()
         {
-            throw new NotImplementedException();
+            T last = _elements.Last;
+            _elements.RemoveLast();
+            return last;
         }
 
         public void Push(T element)
         {
-            throw new NotImplementedException();
+            _elements.AddLast(element);
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            _elements.Clear();
         }
     }
 }
